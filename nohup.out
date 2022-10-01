@@ -714,4 +714,15 @@ Epoch: [0]  [  0/382]  eta: 1:40:33  lr: 0.000100  loss: 0.1413 (0.1413)  loss_C
 Epoch: [0]  [ 10/382]  eta: 0:28:38  lr: 0.000100  loss: 0.0728 (0.0879)  loss_CrossEntropy: 0.0728 (0.0879)  time: 4.6192  data: 0.0463  max mem: 2685
 Epoch: [0]  [ 20/382]  eta: 0:21:29  lr: 0.000100  loss: 0.0637 (0.0766)  loss_CrossEntropy: 0.0637 (0.0766)  time: 3.5627  data: 0.0252  max mem: 2685
 Epoch: [0]  [ 30/382]  eta: 0:22:00  lr: 0.000100  loss: 0.0509 (0.0715)  loss_CrossEntropy: 0.0509 (0.0715)  time: 3.7507  data: 0.0135  max mem: 2688
-Epoch: [0]  [ 40/382]  eta: 0:22:51  lr: 0.000100  loss: 0.0649 (0.0710)  loss_CrossEntropy: 0.0649 (0.0710)  time: 4.0110  data: 0.0366  max mem: 2688
+Epoch: [0]  [ 40/382]  eta: 0:22:51  lr: 0.000100  loss: 0.0649 (0.0710)  loss_CrossEntropy: 0.0649 (0.0710)  time: 4.0110  data: 0.0366  max mem: 2688Traceback (most recent call last):
+  File "main.py", line 1, in <module>
+    from p import directory as dirr
+  File "/content/CycleMix/p.py", line 40
+    git config user.email "salahalsalahi.king@gmail.com"
+             ^
+SyntaxError: invalid syntax
+/content/CycleMix/data/
+Traceback (most recent call last):
+  File "main.py", line 11, in <module>
+    from tensorboard import SummaryWriter
+ImportError: cannot import name 'SummaryWriter' from 'tensorboard' (/usr/local/lib/python3.7/dist-packages/tensorboard/__init__.py)
