@@ -1,6 +1,6 @@
-from p import directory as dirr
-rtp = dirr()
-print(rtp)
+# from p import directory as dirr
+# rtp = dirr()
+# print(rtp)
 import os
 import argparse
 import datetime
@@ -8,7 +8,7 @@ import random
 import json
 import time
 from pathlib import Path
-from tensorboardX import SummaryWriter
+# from tensorboardX import SummaryWriter
 # tensorboard
 import clr
 import numpy as np
@@ -16,6 +16,7 @@ import torch
 from copy import deepcopy
 torch.multiprocessing.set_sharing_strategy('file_system')
 
+from torch.utils.tensorboard import SummaryWriter
 from torch.utils.data import DataLoader, DistributedSampler
 import data
 #from mmdet import datasets
@@ -80,7 +81,7 @@ def get_args_parser():
     parser.add_argument('--dataset', default='small', type=str,
                         help='multi-sequence CMR segmentation dataset')
     # set your outputdir 
-    parser.add_argument('--output_dir', default='/content/drive/MyDrive/out/',
+    parser.add_argument('--output_dir', default='/content/drive/MyDrive/out1/',
                         help='path where to save, empty for no saving')
     parser.add_argument('--device', default='cuda', type=str,
                         help='device to use for training / testing')

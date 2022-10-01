@@ -1099,4 +1099,148 @@ Epoch: [0]  [  0/382]  eta: 0:30:25  lr: 0.000100  loss: 0.1413 (0.1413)  loss_C
 Epoch: [0]  [ 10/382]  eta: 0:15:30  lr: 0.000100  loss: 0.0729 (0.0879)  loss_CrossEntropy: 0.0729 (0.0879)  time: 2.5016  data: 0.0240  max mem: 2685
 Epoch: [0]  [ 20/382]  eta: 0:15:17  lr: 0.000100  loss: 0.0637 (0.0766)  loss_CrossEntropy: 0.0637 (0.0766)  time: 2.5346  data: 0.0130  max mem: 2685
 Epoch: [0]  [ 30/382]  eta: 0:15:40  lr: 0.000100  loss: 0.0507 (0.0715)  loss_CrossEntropy: 0.0507 (0.0715)  time: 2.6716  data: 0.0256  max mem: 2688
-Epoch: [0]  [ 40/382]  eta: 0:14:20  lr: 0.000100  loss: 0.0649 (0.0709)  loss_CrossEntropy: 0.0649 (0.0709)  time: 2.5173  data: 0.0155  max mem: 2688
+Epoch: [0]  [ 40/382]  eta: 0:14:20  lr: 0.000100  loss: 0.0649 (0.0709)  loss_CrossEntropy: 0.0649 (0.0709)  time: 2.5173  data: 0.0155  max mem: 2688/content/CycleMix/data/
+MSCMR(
+  (UNet): Unet(
+    (Pad): ConstantPad2d(padding=(92, 92, 92, 92), value=0)
+    (Maxpool1): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (Maxpool2): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (Maxpool3): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (Maxpool4): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (Conv1): conv_block(
+      (conv): Sequential(
+        (0): Conv2d(1, 64, kernel_size=(3, 3), stride=(1, 1))
+        (1): ReLU(inplace=True)
+        (2): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (3): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1))
+        (4): ReLU(inplace=True)
+        (5): BatchNorm2d(64, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+      )
+    )
+    (Conv2): conv_block(
+      (conv): Sequential(
+        (0): Conv2d(64, 128, kernel_size=(3, 3), stride=(1, 1))
+        (1): ReLU(inplace=True)
+        (2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (3): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1))
+        (4): ReLU(inplace=True)
+        (5): BatchNorm2d(128, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+      )
+    )
+    (Conv3): conv_block(
+      (conv): Sequential(
+        (0): Conv2d(128, 256, kernel_size=(3, 3), stride=(1, 1))
+        (1): ReLU(inplace=True)
+        (2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (3): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1))
+        (4): ReLU(inplace=True)
+        (5): BatchNorm2d(256, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+      )
+    )
+    (Conv4): conv_block(
+      (conv): Sequential(
+        (0): Conv2d(256, 512, kernel_size=(3, 3), stride=(1, 1))
+        (1): ReLU(inplace=True)
+        (2): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (3): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1))
+        (4): ReLU(inplace=True)
+        (5): BatchNorm2d(512, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+      )
+    )
+    (Conv5): conv_block(
+      (conv): Sequential(
+        (0): Conv2d(512, 1024, kernel_size=(3, 3), stride=(1, 1))
+        (1): ReLU(inplace=True)
+        (2): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (3): Conv2d(1024, 1024, kernel_size=(3, 3), stride=(1, 1))
+        (4): ReLU(inplace=True)
+        (5): BatchNorm2d(1024, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+      )
+    )
+    (Up4): up_conv(
+      (up): Sequential(
+        (0): Upsample(scale_factor=2.0, mode=nearest)
+        (1): Conv2d(1024, 4, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+        (2): ReLU(inplace=True)
+        (3): BatchNorm2d(4, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+      )
+    )
+    (Up_conv4): conv_block(
+      (conv): Sequential(
+        (0): Conv2d(516, 512, kernel_size=(3, 3), stride=(1, 1))
+        (1): ReLU(inplace=True)
+        (2): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (3): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1))
+        (4): ReLU(inplace=True)
+        (5): BatchNorm2d(512, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+      )
+    )
+    (Up3): up_conv(
+      (up): Sequential(
+        (0): Upsample(scale_factor=2.0, mode=nearest)
+        (1): Conv2d(512, 4, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+        (2): ReLU(inplace=True)
+        (3): BatchNorm2d(4, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+      )
+    )
+    (Up_conv3): conv_block(
+      (conv): Sequential(
+        (0): Conv2d(260, 256, kernel_size=(3, 3), stride=(1, 1))
+        (1): ReLU(inplace=True)
+        (2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (3): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1))
+        (4): ReLU(inplace=True)
+        (5): BatchNorm2d(256, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+      )
+    )
+    (Up2): up_conv(
+      (up): Sequential(
+        (0): Upsample(scale_factor=2.0, mode=nearest)
+        (1): Conv2d(256, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+        (2): ReLU(inplace=True)
+        (3): BatchNorm2d(128, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+      )
+    )
+    (Up_conv2): conv_block(
+      (conv): Sequential(
+        (0): Conv2d(256, 128, kernel_size=(3, 3), stride=(1, 1))
+        (1): ReLU(inplace=True)
+        (2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (3): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1))
+        (4): ReLU(inplace=True)
+        (5): BatchNorm2d(128, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+      )
+    )
+    (Up1): up_conv(
+      (up): Sequential(
+        (0): Upsample(scale_factor=2.0, mode=nearest)
+        (1): Conv2d(128, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+        (2): ReLU(inplace=True)
+        (3): BatchNorm2d(64, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+      )
+    )
+    (Up_conv1): conv_block(
+      (conv): Sequential(
+        (0): Conv2d(128, 64, kernel_size=(3, 3), stride=(1, 1))
+        (1): ReLU(inplace=True)
+        (2): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (3): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1))
+        (4): ReLU(inplace=True)
+        (5): BatchNorm2d(64, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+      )
+    )
+    (Conv): Conv2d(64, 4, kernel_size=(1, 1), stride=(1, 1))
+    (Norm): BatchNorm2d(4, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+    (active): Softmax(dim=1)
+  )
+)
+number of params: 25759396
+Building training dataset...
+Traceback (most recent call last):
+  File "main.py", line 241, in <module>
+    main(args)
+  File "main.py", line 144, in main
+    dataset_train_dict = build(image_set='train', args=args)
+  File "/content/CycleMix/data/mscmr.py", line 111, in build
+    assert root.exists(), f'provided MSCMR path {root} does not exist'
+AssertionError: provided MSCMR path /content/CycleMix/small does not exist
