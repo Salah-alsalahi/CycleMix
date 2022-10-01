@@ -78,7 +78,7 @@ def get_args_parser():
     parser.add_argument('--dataset', default='MSCMR_dataset', type=str,
                         help='multi-sequence CMR segmentation dataset')
     # set your outputdir 
-    parser.add_argument('--output_dir', default='/content/drive/out/',
+    parser.add_argument('--output_dir', default='/content/drive/MyDrive/out/',
                         help='path where to save, empty for no saving')
     parser.add_argument('--device', default='cuda', type=str,
                         help='device to use for training / testing')
