@@ -75,7 +75,9 @@ def get_args_parser():
     parser.add_argument('--Avg', default=1, type=float)
     
     # dataset parameters
-    parser.add_argument('--dataset', default='MSCMR_dataset', type=str,
+    # parser.add_argument('--dataset', default='MSCMR_dataset', type=str,
+                        # help='multi-sequence CMR segmentation dataset')
+    parser.add_argument('--dataset', default='small', type=str,
                         help='multi-sequence CMR segmentation dataset')
     # set your outputdir 
     parser.add_argument('--output_dir', default='/content/drive/MyDrive/out/',
