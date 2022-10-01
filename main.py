@@ -8,7 +8,7 @@ import random
 import json
 import time
 from pathlib import Path
-from tensorboard import SummaryWriter
+from tensorboardX import SummaryWriter
 # tensorboard
 import clr
 import numpy as np
