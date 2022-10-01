@@ -15,7 +15,15 @@ def directory():
         # if f01=="data":
           # ap1=ap0+f"{f01}/"
           # print(ap1)
-root=directory()
+# root=directory()
+# import os
+# my_path = os.getcwd()
+# print(my_path)
+# os.chdir('/content/CycleMix')
+# p0=os.getcwd()
+# print(p0)
+# files=os.listdir(my_path)
+# print(files)
 # print(root)
         # fp2=os.listdir(ap1)
         # for f02 in fp2:

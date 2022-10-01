@@ -107,7 +107,7 @@ def make_transforms(image_set):
 
 def build(image_set, args):
     # set your data path
-    root = Path('/content/CycleMix/' + args.dataset)
+    root = Path('/data/' + args.dataset)
     assert root.exists(), f'provided MSCMR path {root} does not exist'
     PATHS = {
         "train": (root / "train" / "images", root / "train" / "labels"),
