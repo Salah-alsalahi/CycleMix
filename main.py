@@ -32,7 +32,7 @@ def get_args_parser():
     parser.add_argument('--lr', default=1e-4, type=float)
     parser.add_argument('--batch_size', default=4, type=int)
     parser.add_argument('--weight_decay', default=1e-4, type=float)
-    parser.add_argument('--epochs', default=6000, type=int)
+    parser.add_argument('--epochs', default=60, type=int)
     parser.add_argument('--lr_drop', default=2000, type=int)
     parser.add_argument('--tasks', default=tasks, type=dict)
     parser.add_argument('--model', default='MSCMR', required=False)
