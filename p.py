@@ -37,8 +37,9 @@ root=directory()
 # print(glob.glob(my_path))
 # print(files)
 
-# git config user.email "salahalsalahi.king@gmail.com"
-# gti config user.name "Salah-alsalahi"
+git config user.email "salahalsalahi.king@gmail.com"
+gti config user.name "Salah-alsalahi"
 git add .
 git commit -m "salah"
 git push origin main
+.
