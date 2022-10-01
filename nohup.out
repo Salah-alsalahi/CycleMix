@@ -177,4 +177,183 @@ Epoch: [0]  [  0/382]  eta: 0:21:19  lr: 0.000100  loss: 0.1413 (0.1413)  loss_C
 Epoch: [0]  [ 10/382]  eta: 0:07:23  lr: 0.000100  loss: 0.0728 (0.0879)  loss_CrossEntropy: 0.0728 (0.0879)  time: 1.1914  data: 0.0130  max mem: 2685
 Epoch: [0]  [ 20/382]  eta: 0:06:31  lr: 0.000100  loss: 0.0636 (0.0765)  loss_CrossEntropy: 0.0636 (0.0765)  time: 1.0824  data: 0.0116  max mem: 2685
 Epoch: [0]  [ 30/382]  eta: 0:07:13  lr: 0.000100  loss: 0.0508 (0.0715)  loss_CrossEntropy: 0.0508 (0.0715)  time: 1.2308  data: 0.0143  max mem: 2688
-Epoch: [0]  [ 40/382]  eta: 0:06:12  lr: 0.000100  loss: 0.0645 (0.0709)  loss_CrossEntropy: 0.0645 (0.0709)  time: 1.0905  data: 0.0197  max mem: 2688
+Epoch: [0]  [ 40/382]  eta: 0:06:12  lr: 0.000100  loss: 0.0645 (0.0709)  loss_CrossEntropy: 0.0645 (0.0709)  time: 1.0905  data: 0.0197  max mem: 2688/content/CycleMix/data/
+MSCMR(
+  (UNet): Unet(
+    (Pad): ConstantPad2d(padding=(92, 92, 92, 92), value=0)
+    (Maxpool1): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (Maxpool2): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (Maxpool3): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (Maxpool4): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (Conv1): conv_block(
+      (conv): Sequential(
+        (0): Conv2d(1, 64, kernel_size=(3, 3), stride=(1, 1))
+        (1): ReLU(inplace=True)
+        (2): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (3): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1))
+        (4): ReLU(inplace=True)
+        (5): BatchNorm2d(64, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+      )
+    )
+    (Conv2): conv_block(
+      (conv): Sequential(
+        (0): Conv2d(64, 128, kernel_size=(3, 3), stride=(1, 1))
+        (1): ReLU(inplace=True)
+        (2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (3): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1))
+        (4): ReLU(inplace=True)
+        (5): BatchNorm2d(128, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+      )
+    )
+    (Conv3): conv_block(
+      (conv): Sequential(
+        (0): Conv2d(128, 256, kernel_size=(3, 3), stride=(1, 1))
+        (1): ReLU(inplace=True)
+        (2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (3): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1))
+        (4): ReLU(inplace=True)
+        (5): BatchNorm2d(256, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+      )
+    )
+    (Conv4): conv_block(
+      (conv): Sequential(
+        (0): Conv2d(256, 512, kernel_size=(3, 3), stride=(1, 1))
+        (1): ReLU(inplace=True)
+        (2): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (3): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1))
+        (4): ReLU(inplace=True)
+        (5): BatchNorm2d(512, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+      )
+    )
+    (Conv5): conv_block(
+      (conv): Sequential(
+        (0): Conv2d(512, 1024, kernel_size=(3, 3), stride=(1, 1))
+        (1): ReLU(inplace=True)
+        (2): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (3): Conv2d(1024, 1024, kernel_size=(3, 3), stride=(1, 1))
+        (4): ReLU(inplace=True)
+        (5): BatchNorm2d(1024, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+      )
+    )
+    (Up4): up_conv(
+      (up): Sequential(
+        (0): Upsample(scale_factor=2.0, mode=nearest)
+        (1): Conv2d(1024, 4, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+        (2): ReLU(inplace=True)
+        (3): BatchNorm2d(4, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+      )
+    )
+    (Up_conv4): conv_block(
+      (conv): Sequential(
+        (0): Conv2d(516, 512, kernel_size=(3, 3), stride=(1, 1))
+        (1): ReLU(inplace=True)
+        (2): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (3): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1))
+        (4): ReLU(inplace=True)
+        (5): BatchNorm2d(512, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+      )
+    )
+    (Up3): up_conv(
+      (up): Sequential(
+        (0): Upsample(scale_factor=2.0, mode=nearest)
+        (1): Conv2d(512, 4, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+        (2): ReLU(inplace=True)
+        (3): BatchNorm2d(4, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+      )
+    )
+    (Up_conv3): conv_block(
+      (conv): Sequential(
+        (0): Conv2d(260, 256, kernel_size=(3, 3), stride=(1, 1))
+        (1): ReLU(inplace=True)
+        (2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (3): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1))
+        (4): ReLU(inplace=True)
+        (5): BatchNorm2d(256, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+      )
+    )
+    (Up2): up_conv(
+      (up): Sequential(
+        (0): Upsample(scale_factor=2.0, mode=nearest)
+        (1): Conv2d(256, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+        (2): ReLU(inplace=True)
+        (3): BatchNorm2d(128, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+      )
+    )
+    (Up_conv2): conv_block(
+      (conv): Sequential(
+        (0): Conv2d(256, 128, kernel_size=(3, 3), stride=(1, 1))
+        (1): ReLU(inplace=True)
+        (2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (3): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1))
+        (4): ReLU(inplace=True)
+        (5): BatchNorm2d(128, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+      )
+    )
+    (Up1): up_conv(
+      (up): Sequential(
+        (0): Upsample(scale_factor=2.0, mode=nearest)
+        (1): Conv2d(128, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+        (2): ReLU(inplace=True)
+        (3): BatchNorm2d(64, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+      )
+    )
+    (Up_conv1): conv_block(
+      (conv): Sequential(
+        (0): Conv2d(128, 64, kernel_size=(3, 3), stride=(1, 1))
+        (1): ReLU(inplace=True)
+        (2): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (3): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1))
+        (4): ReLU(inplace=True)
+        (5): BatchNorm2d(64, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+      )
+    )
+    (Conv): Conv2d(64, 4, kernel_size=(1, 1), stride=(1, 1))
+    (Norm): BatchNorm2d(4, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+    (active): Softmax(dim=1)
+  )
+)
+number of params: 25759396
+Building training dataset...
+subject13_DE.nii subject13_DE_scribble.nii
+subject14_DE.nii subject14_DE_scribble.nii
+subject15_DE.nii subject15_DE_scribble.nii
+subject18_DE.nii subject18_DE_scribble.nii
+subject19_DE.nii subject19_DE_scribble.nii
+subject20_DE.nii subject20_DE_scribble.nii
+subject21_DE.nii subject21_DE_scribble.nii
+subject22_DE.nii subject22_DE_scribble.nii
+subject24_DE.nii subject24_DE_scribble.nii
+subject25_DE.nii subject25_DE_scribble.nii
+subject26_DE.nii subject26_DE_scribble.nii
+subject27_DE.nii subject27_DE_scribble.nii
+subject2_DE.nii subject2_DE_scribble.nii
+subject31_DE.nii subject31_DE_scribble.nii
+subject32_DE.nii subject32_DE_scribble.nii
+subject34_DE.nii subject34_DE_scribble.nii
+subject37_DE.nii subject37_DE_scribble.nii
+subject39_DE.nii subject39_DE_scribble.nii
+subject42_DE.nii subject42_DE_scribble.nii
+subject44_DE.nii subject44_DE_scribble.nii
+subject45_DE.nii subject45_DE_scribble.nii
+subject4_DE.nii subject4_DE_scribble.nii
+subject6_DE.nii subject6_DE_scribble.nii
+subject7_DE.nii subject7_DE_scribble.nii
+subject9_DE.nii subject9_DE_scribble.nii
+Number of training images: 382
+Building validation dataset...
+subject1_DE.nii subject1_DE_manual.nii
+subject29_DE.nii subject29_DE_manual.nii
+subject36_DE.nii subject36_DE_manual.nii
+subject41_DE.nii subject41_DE_manual.nii
+subject8_DE.nii subject8_DE_manual.nii
+Number of validation images: 75
+Start training
+cutout loss: 0.11267604678869247
+original loss: 0.14125657081604004
+integrity loss: 0.052877821028232574
+invariant loss: 0.033955514430999756
+Epoch: [0]  [  0/382]  eta: 0:37:32  lr: 0.000100  loss: 0.1413 (0.1413)  loss_CrossEntropy: 0.1413 (0.1413)  time: 5.8962  data: 0.0269  max mem: 2052
+Epoch: [0]  [ 10/382]  eta: 0:21:29  lr: 0.000100  loss: 0.0730 (0.0879)  loss_CrossEntropy: 0.0730 (0.0879)  time: 3.4663  data: 0.0234  max mem: 2685
+Epoch: [0]  [ 20/382]  eta: 0:14:28  lr: 0.000100  loss: 0.0635 (0.0766)  loss_CrossEntropy: 0.0635 (0.0766)  time: 2.3986  data: 0.0264  max mem: 2685
+Epoch: [0]  [ 30/382]  eta: 0:20:59  lr: 0.000100  loss: 0.0508 (0.0716)  loss_CrossEntropy: 0.0508 (0.0716)  time: 3.5780  data: 0.0129  max mem: 2688
+Epoch: [0]  [ 40/382]  eta: 0:25:14  lr: 0.000100  loss: 0.0646 (0.0709)  loss_CrossEntropy: 0.0646 (0.0709)  time: 4.4273  data: 0.0332  max mem: 2688
