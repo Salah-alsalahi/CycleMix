@@ -117,9 +117,9 @@ def infer(model, criterion, dataloader_dict, device):
     model.eval()
     criterion.eval()
     
-    test_folder = "/data/zhangke/datasets/scribble_MSCMR/val/images/"
-    label_folder = "/data/zhangke/datasets/scribble_MSCMR/val/labels/"
-    output_folder = "/data/zhangke/datasets/scribble_MSCMR/self_MSCMR/"
+    test_folder = "/content/CycleMix/data/MSCMR_dataset/val/images/"
+    label_folder = "/content/CycleMix/data/MSCMR_dataset/val/labels/"
+    output_folder = "/content/CycleMix/data/MSCMR_dataset/self_MSCMR/"
 
     if os.path.exists(output_folder):
         shutil.rmtree(output_folder)
