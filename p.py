@@ -36,3 +36,6 @@ root=directory()
 # import glob
 # print(glob.glob(my_path))
 # print(files)
+
+# git config user.email "salahalsalahi.king@gmail.com"
+# gti config user.name "Salah-alsalahi"
