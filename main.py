@@ -1,3 +1,6 @@
+from p import directory as dirr
+rtp = dirr()
+print(rtp)
 import os
 import argparse
 import datetime
@@ -20,7 +23,6 @@ from data import build
 from engines import train_one_epoch
 from inference import infer, evaluate
 from models import build_model
-from p import directory
 def get_args_parser():
     # define task, label values, and output channels
     tasks = {
@@ -233,4 +235,4 @@ if __name__ == '__main__':
         Path(args.output_dir).mkdir(parents=True, exist_ok=True)
     os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"
     os.environ["CUDA_VISIBLE_DEVICES"] = "{}".format(args.GPU_ids)
-    main(args)
+    # main(args)

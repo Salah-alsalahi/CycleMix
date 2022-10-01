@@ -1,0 +1,8 @@
+scipy
+tensorboardX
+mmdet 
+mmcv
+einops
+SimpleITK
+scikit-image
+gco-wrapper

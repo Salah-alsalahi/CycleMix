@@ -3,19 +3,20 @@ def directory():
   import os
   my_path = os.getcwd()
   files=os.listdir(my_path)
+  # print(files)
   for f0 in files:
     ap0=f"{my_path}/{f0}/"
-    # print(ap0)
-    if f0 == 'CycleMix':
-      # print(ap0)
-      fp1=os.listdir(ap0)
-      for f01 in fp1:
-        if f01=="data":
-          ap1=ap0+f"{f01}/"
+    # print(f0)
+    if f0 == 'data':
+      # print("data file path  ",ap0)
+      return ap0
+      # fp1=os.listdir(ap0)
+      # for f01 in fp1:
+        # if f01=="data":
+          # ap1=ap0+f"{f01}/"
           # print(ap1)
-  return ap1
 root=directory()
-print(root)
+# print(root)
         # fp2=os.listdir(ap1)
         # for f02 in fp2:
           # if f02=="Colab Notebooks":
